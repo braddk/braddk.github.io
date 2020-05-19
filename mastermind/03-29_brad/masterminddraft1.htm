@@ -1,0 +1,246 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>CSC 551 Mastermind Game (Javascript) Creighton University; Brad Kattleman and Brett Stoneberger</title>
+		<link href="http://www.tallyshooter.com/Brett/CSC551.css" rel="stylesheet" type="text/css">
+		<script language="JavaScript">
+
+// Images
+
+
+var arrow = new Image;       // yellow arrow gif
+var marble = new Array();       // Colored marbles
+
+// Arrays
+var guess = new Array();     // Player's guess of colors
+
+
+
+
+// Create initial images of the marbles
+for (i=0; i<=5; i++){
+   marble[i] = new Image();
+   }
+
+// Place images files in the right location at the start of the game
+
+arrow.src = "arrow.gif";
+marble[0].src = "black.gif";
+marble[1].src = "blue.gif";
+marble[2].src = "green.gif";
+marble[3].src = "red.gif";
+marble[4].src = "yellow.gif";
+marble[5].src = "white.gif";
+
+
+var done = 0;
+var ready = 0;
+
+
+function startgame(){       // reset the game for play (needs more work)
+   current = 0;               // Initialize the variables
+      for(x=0; x<=3; x++) {     // Setup the initial marble and other images
+      guess[x] = 1;          // Start with blue marbles (color #1)
+      document.images[current+x].src = marble[guess[x]].src;
+   }
+   document.images[current+4].src = arrow.src;      // Point to the current row with yellow arrow
+   
+}
+
+
+
+
+function choices(i) {          // Player scrolls through colored marble choices
+   if (!done) {              
+      if (++guess[i]>5)
+         guess[i]=0;
+      document.images[current+i].src = marble[guess[i]].src;  // Display the chosen marble
+   }
+}
+
+</script>
+	</head>
+
+	<body bgcolor="white" onload="startgame();">
+		<center>
+			<table align="left" border="2" bordercolor = "#778899" cellpadding="0" cellspacing="0" width="100%" >
+					<tr>
+						<td valign="top">
+							<table align="left" border="0" cellpadding="0" cellspacing="4">
+								<tr>
+									<td>
+										<div align="center">
+											<img src="blue.gif" width="25" height="25" border="0"></div>
+									</td>
+									<td>
+										<div align="center">
+											<img src="blue.gif" width="25" height="25" border="0"></div>
+									</td>
+									<td>
+										<div align="center">
+											<img src="blue.gif" width="25" height="25" border="0"></div>
+									</td>
+									<td>
+										<div align="center">
+											<img src="blue.gif" width="25" height="25" border="0"></div>
+									</td>
+									<td><img alt="" src="arrow.gif"></td>
+									<td><img alt="" src="fill.gif"></td>
+								</tr>
+								<tr>
+									<td>
+										<div align="center">
+											<img alt="" src="Bckgrnd.gif"></div>
+									</td>
+									<td>
+										<div align="center">
+											<img alt="" src="Bckgrnd.gif"></div>
+									</td>
+									<td>
+										<div align="center">
+											<img alt="" src="Bckgrnd.gif"></div>
+									</td>
+									<td>
+										<div align="center">
+											<img alt="" src="Bckgrnd.gif"></div>
+									</td>
+									<td><img alt="" src="fill.gif"></td>
+									<td><img alt="" src="fill.gif"></td>
+								</tr>
+								<tr>
+									<td>
+										<div align="center">
+											<img alt="" src="Bckgrnd.gif"></div>
+									</td>
+									<td>
+										<div align="center">
+											<img alt="" src="Bckgrnd.gif"></div>
+									</td>
+									<td>
+										<div align="center">
+											<img alt="" src="Bckgrnd.gif"></div>
+									</td>
+									<td>
+										<div align="center">
+											<img alt="" src="Bckgrnd.gif"></div>
+									</td>
+									<td><img alt="" src="smiley1.gif"></td>
+									<td><img alt="" src="frown1.gif"></td>
+								</tr>
+								<tr>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="fill.gif"></td>
+									<td><img alt="" src="fill.gif"></td>
+								</tr>
+								<tr>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="fill.gif"></td>
+									<td><img alt="" src="fill.gif"></td>
+								</tr>
+								<tr>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="fill.gif"></td>
+									<td><img alt="" src="fill.gif"></td>
+								</tr>
+								<tr>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="fill.gif"></td>
+									<td><img alt="" src="fill.gif"></td>
+								</tr>
+								<tr>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="fill.gif"></td>
+									<td><img alt="" src="fill.gif"></td>
+								</tr>
+								<tr>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="fill.gif"></td>
+									<td><img alt="" src="fill.gif"></td>
+								</tr>
+								<tr>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="Bckgrnd.gif"></td>
+									<td><img alt="" src="fill.gif"></td>
+									<td><img alt="" src="fill.gif"></td>
+								</tr>
+								<tr align="middle">
+									<form name="mastermind">
+										<td>
+											<div align="center">
+												<input name="toggle1" onclick="choices(0);" type="button" value=" 1 " width="20"></div>
+										</td>
+										<td>
+											<div align="center">
+												<input name="toggle2" onclick="choices(1);" type="button" value=" 2 " width="20" heigth="20" height="20"></div>
+										</td>
+										<td>
+											<div align="center">
+												<input name="toggle3" onclick="choices(2);" type="button" value=" 3 " width="20"></div>
+										</td>
+										<td>
+											<div align="center">
+												<input name="toggle4" onclick="choices(3);" type="button" value=" 4 " width="20"></div>
+										</td>
+										<td colspan="2">
+											<div align="center">
+<!--he go button needs to give us answers and take us to the next row via another function-->
+												<input name="go" type="button" value="Go"></div>
+										</td>
+									</form>
+								</tr>
+								<tr>
+									<td colspan="6"></td>
+								</tr>
+								<tr>
+									<td><img alt="" src="final.gif"></td>
+									<td><img alt="" src="final.gif"></td>
+									<td><img alt="" src="final.gif"></td>
+									<td><img alt="" src="final.gif"></td>
+									<td colspan="2">
+										<div align="center">
+											<img alt="" src="logic.gif"></div>
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td valign="top" width="15"><img src="../spacer.gif" width="15" height="1" border="0"></td>
+						<td valign="top" bgcolor="#dcdcdc"><blockquote>The goal is to find the secret combination of colored marbles in 10 tries or less. The computer chooses 4 marbles at random from 6 colors. The colors are <b>black</b>, <font color="#0000cd"><b>blue</b></font>, <font color="green"><b>green</b></font>, <font color="red"><b>red</b></font>, <font color="yellow"><b>yellow</b></font>, and <span style="background-color: black; color: white; font-weight: bold;">white</span>. The default starting color for all four marbles is <font color="#0000cd"><b>blue</b></font>.
+							<p>This combination can contain marbles of all different colors or multiple marbles of the same color. In other words, duplicates are allowed.</p>
+							<p>To make a guess, set the 4 colors in the current row (pointed to by the arrow) by clicking the numbered buttons at the bottom of each column of marbles. Then click the &quot;Go&quot; button and the computer scores that guess. You may change selections at anytime prior to pressing the &quot;Go&quot; button.</p>
+							<p>To the right of your current selection, the computer displays two figures: a <b>&quot;Smiley Face&quot;</b>; and a <b>&quot;Frown Face&quot;</b>; each displayed with a number.</p>
+							<p>The <b>&quot;Smiley Face&quot;</b> and its cooresponding number represents the number of marbles that are the correct color and in the correct location.</p>
+							<p>The <b>&quot;Frown Face&quot;</b> and its cooresponding number represents the number of marbles that are the correct color but not in the correct location.<br>
+								<br>
+							</p>
+							<p>To play again, simply click the &quot;Go&quot; button again or reload the page.<br>
+								<br>
+							</p>
+							<p></p></blockquote>
+						</td>
+					</tr>
+				</table>
+		</center>
+	</body>
+
+</html>
